@@ -1,0 +1,10 @@
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^cyan-mandrill-509849.hostingersite.com$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^www.cyan-mandrill-509849.hostingersite.com$
+RewriteCond %{REQUEST_URI} !public/
+RewriteRule (.*) /public/$1 [L]
+
+# Manejar errores de acceso (Opcional, para evitar 403 en carpetas sin índice)
+<IfModule mod_dir.c>
+    DirectoryIndex index.php
+</IfModule>
