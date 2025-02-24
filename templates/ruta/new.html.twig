@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Ruta{% endblock %}
+
+{% block body %}
+    <h1>Create new Ruta</h1>
+
+    {{ include('ruta/_form.html.twig') }}
+
+    <a href="{{ path('app_ruta_index') }}">back to list</a>
+{% endblock %}
