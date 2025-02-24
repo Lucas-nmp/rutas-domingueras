@@ -16,15 +16,15 @@
             </tr>
         </thead>
         <tbody>
-        {% for rutum in rutas %}
+        {% for ruta in rutas %}
             <tr>
-                <td>{{ rutum.id }}</td>
-                <td>{{ rutum.name }}</td>
-                <td>{{ rutum.dateRuta ? rutum.dateRuta|date('Y-m-d') : '' }}</td>
-                <td>{{ rutum.description }}</td>
+                <td>{{ ruta.id }}</td>
+                <td>{{ ruta.name }}</td>
+                <td>{{ ruta.dateRuta ? ruta.dateRuta|date('Y-m-d') : '' }}</td>
+                <td>{{ ruta.description }}</td>
                 <td>
-                    <a href="{{ path('app_ruta_show', {'id': rutum.id}) }}">show</a>
-                    <a href="{{ path('app_ruta_edit', {'id': rutum.id}) }}">edit</a>
+                    <a href="{{ path('app_ruta_show', {'id': ruta.id}) }}">show</a>
+                    <a href="{{ path('app_ruta_edit', {'id': ruta.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}

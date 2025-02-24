@@ -60,10 +60,17 @@ header a{
 }
 .carousel .list .item .title,
 .carousel .list .item .topic{
-    font-size: 5em;
     font-weight: bold;
     line-height: 1.3em;
 }
+.carousel .list .item .title {
+    font-size: 5em;
+}
+
+.carousel .list .item .topic{
+    font-size: 3em;
+}
+
 .carousel .list .item .topic{
     color: #f1683a;
 }

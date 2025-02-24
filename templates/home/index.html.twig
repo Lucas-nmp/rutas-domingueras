@@ -8,123 +8,46 @@
     <nav>
         <a href="">Home</a>
         <a href="">Contacts</a>
-        <a href="">Info</a>
+        <a href="{{ path('app_ruta_index') }}">Gestión de rutas</a>
     </nav>
 </header>
 
+<!-- {{ dump(rutas) }} -->
 <!-- carousel -->
 <div class="carousel">
     <!-- list item -->
     <div class="list">
+        {% for ruta in rutas %}
         <div class="item">
-            <img src="image/img1.jpg">
+            <img src="{{ asset(ruta.firstImage) }}" alt="{{ ruta.name }}">
             <div class="content">
-                <div class="author">LUNDEV</div>
-                <div class="title">DESIGN SLIDER</div>
-                <div class="topic">ANIMAL</div>
-                <div class="des">
-                    <!-- lorem 50 -->
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?
-                </div>
+                <div class="title">{{ ruta.name }}</div>
+                <div class="topic">{{ ruta.dateruta|date('d-m-Y') }}</div>
+                <div class="des">{{ ruta.description }}</div>
                 <div class="buttons">
                     <button>SEE MORE</button>
-                    <button>SUBSCRIBE</button>
+                    
                 </div>
             </div>
         </div>
-        <div class="item">
-            <img src="image/img2.jpg">
-            <div class="content">
-                <div class="author">LUNDEV</div>
-                <div class="title">DESIGN SLIDER</div>
-                <div class="topic">ANIMAL</div>
-                <div class="des">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?
-                </div>
-                <div class="buttons">
-                    <button>SEE MORE</button>
-                    <button>SUBSCRIBE</button>
-                </div>
-            </div>
-        </div>
-        <div class="item">
-            <img src="image/img3.jpg">
-            <div class="content">
-                <div class="author">LUNDEV</div>
-                <div class="title">DESIGN SLIDER</div>
-                <div class="topic">ANIMAL</div>
-                <div class="des">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?
-                </div>
-                <div class="buttons">
-                    <button>SEE MORE</button>
-                    <button>SUBSCRIBE</button>
-                </div>
-            </div>
-        </div>
-        <div class="item">
-            <img src="image/img4.jpg">
-            <div class="content">
-                <div class="author">LUNDEV</div>
-                <div class="title">DESIGN SLIDER</div>
-                <div class="topic">ANIMAL</div>
-                <div class="des">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?
-                </div>
-                <div class="buttons">
-                    <button>SEE MORE</button>
-                    <button>SUBSCRIBE</button>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
     </div>
+
     <!-- list thumnail -->
+
     <div class="thumbnail">
-        <div class="item">
-            <img src="image/img1.jpg">
-            <div class="content">
-                <div class="title">
-                    Name Slider
-                </div>
-                <div class="description">
-                    Description
+        {% for ruta in rutas %}
+            <div class="item">
+                <img src="{{ asset(ruta.firstImage) }}" alt="{{ ruta.name }}">
+                <div class="content">
+                    <div class="title">{{ ruta.name }}</div>
+                    <div class="description">{{ ruta.dateruta|date('d-m-Y') }}</div>
                 </div>
             </div>
-        </div>
-        <div class="item">
-            <img src="image/img2.jpg">
-            <div class="content">
-                <div class="title">
-                    Name Slider
-                </div>
-                <div class="description">
-                    Description
-                </div>
-            </div>
-        </div>
-        <div class="item">
-            <img src="image/img3.jpg">
-            <div class="content">
-                <div class="title">
-                    Name Slider
-                </div>
-                <div class="description">
-                    Description
-                </div>
-            </div>
-        </div>
-        <div class="item">
-            <img src="image/img4.jpg">
-            <div class="content">
-                <div class="title">
-                    Name Slider
-                </div>
-                <div class="description">
-                    Description
-                </div>
-            </div>
-        </div>
+        {% endfor %}
+        
     </div>
+    
     <!-- next prev -->
 
     <div class="arrows">

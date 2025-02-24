@@ -1,4 +1,12 @@
-{{ form_start(form) }}
+{{ form_start(form, {'attr': {'enctype': 'multipart/form-data', 'data-turbo': 'false'}}) }}
     {{ form_widget(form) }}
+    <div class="form-group">
+        <label for="images">Imágenes:</label>
+        <div class="input-group">
+            
+            <input type="file" class="form-control-file d-none" id="images" name="images[]" multiple accept="image/*">
+            
+        </div>
+    </div>
     <button class="btn">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}
