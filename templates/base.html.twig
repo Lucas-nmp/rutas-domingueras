@@ -13,6 +13,7 @@
         {% endblock %}
     </head>
     <body>
+        {% include "parts/header.html.twig" %}
         {% block body %}{% endblock %}
 
         <script src="{{ asset('js/app.js') }}"></script>

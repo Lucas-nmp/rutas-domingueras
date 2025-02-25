@@ -1,39 +1,44 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Ruta index{% endblock %}
+{% block title %}Lista de Rutas{% endblock %}
 
 {% block body %}
-    <h1>Ruta index</h1>
+    <div class="administration">
+        <h1>Ruta index</h1>
+        <hr>
+        <a href="{{ path('app_ruta_new') }}">Create new</a>
+        <hr>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Date_ruta</th>
-                <th>Description</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for ruta in rutas %}
-            <tr>
-                <td>{{ ruta.id }}</td>
-                <td>{{ ruta.name }}</td>
-                <td>{{ ruta.dateRuta ? ruta.dateRuta|date('Y-m-d') : '' }}</td>
-                <td>{{ ruta.description }}</td>
-                <td>
-                    <a href="{{ path('app_ruta_show', {'id': ruta.id}) }}">show</a>
-                    <a href="{{ path('app_ruta_edit', {'id': ruta.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="5">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('app_ruta_new') }}">Create new</a>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Date_ruta</th>
+                    <th>Description</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for ruta in rutas %}
+                <tr>
+                    <td>{{ ruta.id }}</td>
+                    <td>{{ ruta.name }}</td>
+                    <td>{{ ruta.dateRuta ? ruta.dateRuta|date('Y-m-d') : '' }}</td>
+                    <td>{{ ruta.description }}</td>
+                    <td>
+                        <a href="{{ path('app_ruta_show', {'id': ruta.id}) }}">show</a>
+                        <a href="{{ path('app_ruta_edit', {'id': ruta.id}) }}">edit</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="5">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        
+    </div>
+    
 {% endblock %}

@@ -1,0 +1,9 @@
+<header>
+    <nav>
+        <a href="{{ path('app_home') }}">Home</a>
+        <a href="{{ path('app_login') }}">Login</a>
+        {% if is_granted('ROLE_ADMIN') %}
+            <a href="{{ path('app_ruta_index') }}">Gestión de rutas</a>
+        {% endif %}
+    </nav>
+</header>

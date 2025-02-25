@@ -4,7 +4,7 @@ body{
     background-color: #000;
     color: #eee;
     font-family: Poppins;
-    font-size: 12px;
+    font-size: 16px;
 }
 a{
     text-decoration: none;
@@ -18,10 +18,12 @@ header{
     align-items: center;
     position: relative;
     z-index: 100;
+    
 }
 header a{
     color: #eee;
     margin-right: 40px;
+    font-size: 16px;
 }
 /* carousel */
 .carousel{
@@ -312,4 +314,10 @@ header a{
     .carousel .list .item .content .title{
         font-size: 30px;
     }
+    
+}
+
+.administration {
+    color: #000;
+    margin: 5rem;
 }
