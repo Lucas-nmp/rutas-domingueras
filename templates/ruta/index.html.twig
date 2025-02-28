@@ -6,7 +6,7 @@
     <div class="administration">
         <h1>Ruta index</h1>
         <hr>
-        <a href="{{ path('app_ruta_new') }}">Create new</a>
+        <a class="btn btn-primary" href="{{ path('app_ruta_new') }}"><i class="bi bi-folder-plus"></i></a>
         <hr>
 
         <table class="table">
@@ -25,10 +25,17 @@
                     <td>{{ ruta.id }}</td>
                     <td>{{ ruta.name }}</td>
                     <td>{{ ruta.dateRuta ? ruta.dateRuta|date('Y-m-d') : '' }}</td>
-                    <td>{{ ruta.description }}</td>
+                    <td>{{ ruta.description|slice(0, 150) ~ '...' }}</td>
+
                     <td>
-                        <a href="{{ path('app_ruta_show', {'id': ruta.id}) }}">show</a>
-                        <a href="{{ path('app_ruta_edit', {'id': ruta.id}) }}">edit</a>
+                        <a class="btn btn-success" href="{{ path('app_ruta_show', {'id': ruta.id}) }}"><i class="bi bi-eye"></i></a>
+                        <a class="btn btn-primary" href="{{ path('app_ruta_edit', {'id': ruta.id}) }}"><i class="bi bi-pencil-square"></i></a>
+                        <form method="post" action="{{ path('app_ruta_delete', {'id': ruta.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');" style="display:inline;">
+                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ ruta.id) }}">
+                            <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
+                        </form>
+                        
+                        
                     </td>
                 </tr>
             {% else %}

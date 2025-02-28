@@ -4,9 +4,10 @@
         <label for="images">Imágenes:</label>
         <div class="input-group">
             
-            <input type="file" class="form-control-file d-none" id="images" name="images[]" multiple accept="image/*">
+            <input type="file" class="btn" id="images" name="images[]" multiple accept="image/*">
             
         </div>
     </div>
-    <button class="btn">{{ button_label|default('Save') }}</button>
+    <button class="btn btn-success">{{ button_label|default('Save') }}</button>
+    <a class="btn btn-primary" href="{{ path('app_ruta_index') }}"><i class="bi bi-box-arrow-in-left"></i></a>
 {{ form_end(form) }}

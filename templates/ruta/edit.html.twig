@@ -3,13 +3,12 @@
 {% block title %}Edit Ruta{% endblock %}
 
 {% block body %}
-    <div class="administration"></div>
+    <div class="administration">
         <h1>Edit Ruta</h1>
 
         {{ include('ruta/_form.html.twig', {'button_label': 'Update'}) }}
 
-        <a href="{{ path('app_ruta_index') }}">back to list</a>
-
-        {{ include('ruta/_delete_form.html.twig') }}
+        
+        
     </div>
 {% endblock %}

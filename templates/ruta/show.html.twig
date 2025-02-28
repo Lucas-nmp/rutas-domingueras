@@ -5,7 +5,7 @@
 {% block body %}
     <div class="administration">
         <h1>Ruta</h1>
-
+        <hr>
         <table class="table">
             <tbody>
                 <tr>
@@ -27,10 +27,10 @@
             </tbody>
         </table>
 
-        <a href="{{ path('app_ruta_index') }}">back to list</a>
+        <a class="btn btn-success" href="{{ path('app_ruta_index') }}"><i class="bi bi-box-arrow-in-left"></i></a>
 
-        <a href="{{ path('app_ruta_edit', {'id': ruta.id}) }}">edit</a>
+        <a class="btn btn-primary" href="{{ path('app_ruta_edit', {'id': ruta.id}) }}"><i class="bi bi-pencil-square"></i></a>
 
-        {{ include('ruta/_delete_form.html.twig') }}
+        
     </div>
 {% endblock %}
