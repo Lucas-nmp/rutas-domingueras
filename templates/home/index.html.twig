@@ -9,47 +9,34 @@
 <!-- {{ dump(rutas) }} -->
 <!-- carousel -->
 <div class="carousel">
-    <!-- list item -->
+
     <div class="list">
         {% for ruta in rutas %}
-        <div class="item">
-            <img src="{{ asset(ruta.firstImage) }}" alt="{{ ruta.name }}">
-            <div class="content">
-                <div class="title">{{ ruta.name }}</div>
-                <div class="topic">{{ ruta.dateruta|date('d-m-Y') }}</div>
-                <div class="des">{{ ruta.description }}</div>
-                <div class="buttons">
-                    <button>SEE MORE</button>
-                    
-                </div>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
-
-    <!-- list thumnail -->
-
-    <div class="thumbnail">
-        {% for ruta in rutas %}
-            <div class="item">
-                <img src="{{ asset(ruta.firstImage) }}" alt="{{ ruta.name }}">
+            <div class="item" style="background-image: url('{{ asset(ruta.firstImage) }}');">
                 <div class="content">
                     <div class="title">{{ ruta.name }}</div>
-                    <div class="description">{{ ruta.dateruta|date('d-m-Y') }}</div>
+                    <div class="name">{{ ruta.dateruta|date('d-m-Y') }}</div>
+                    <div class="des">{{ ruta.description }}</div>
+                    <div class="btn">
+                        <button>SEE MORE</button>
+                        
+                    </div>
                 </div>
             </div>
         {% endfor %}
-        
-    </div>
     
-    <!-- next prev -->
-
-    <div class="arrows">
-        <button id="prev"><</button>
-        <button id="next">></button>
     </div>
+
+    <!--next prev button-->
+    <div class="arrows">
+        <button class="prev"><</button>
+        <button class="next">></button>
+    </div>
+
+
     <!-- time running -->
-    <div class="time"></div>
+    <div class="timeRunning"></div>
+
 </div>
 
 
